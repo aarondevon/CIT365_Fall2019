@@ -12,6 +12,7 @@ namespace MathQuiz
 {
     public partial class Form1 : Form
     {
+       
         // Create a Random object called randomizer
         // to generate random numbers.
         Random randomizer = new Random();
@@ -39,6 +40,9 @@ namespace MathQuiz
         // This integer variable keeps track of the
         // remaining time.
         int timeLeft;
+
+        // get Date object
+        DateTime dateTime = DateTime.Now;
 
         public void StartTheQuiz()
         {
@@ -166,6 +170,11 @@ namespace MathQuiz
                 int lengthOfAnswer = answerBox.Value.ToString().Length;
                 answerBox.Select(0, lengthOfAnswer);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            currentDate.Text = dateTime.ToString();
         }
     }
 }
