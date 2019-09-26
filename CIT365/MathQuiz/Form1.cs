@@ -112,6 +112,7 @@ namespace MathQuiz
         private void startButton_Click(object sender, EventArgs e)
         {
             StartTheQuiz();
+            timeLabel.BackColor = Color.White;
             startButton.Enabled = false;
         }
 
@@ -134,6 +135,10 @@ namespace MathQuiz
                 // display the new time left by updating the 
                 // Time Left label.
                 timeLeft--;
+                if (timeLeft <= 5)
+                {
+                    timeLabel.BackColor = Color.Red;
+                }
                 timeLabel.Text = timeLeft + " seconds";
             }
             else
