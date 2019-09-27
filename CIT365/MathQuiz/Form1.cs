@@ -174,7 +174,7 @@ namespace MathQuiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            currentDate.Text = dateTime.ToString();
+            currentDate.Text = dateTime.ToString("dd MMMM yyyy");
         }
     }
 }
