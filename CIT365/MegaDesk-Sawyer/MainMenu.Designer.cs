@@ -50,6 +50,7 @@
             this.AddQuote.TabIndex = 0;
             this.AddQuote.Text = "&Add Quote";
             this.AddQuote.UseVisualStyleBackColor = false;
+            this.AddQuote.Click += new System.EventHandler(this.AddQuote_Click);
             // 
             // button2
             // 

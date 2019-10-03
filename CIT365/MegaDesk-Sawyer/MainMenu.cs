@@ -16,5 +16,13 @@ namespace MegaDesk_Sawyer
         {
             InitializeComponent();
         }
+
+        private void AddQuote_Click(object sender, EventArgs e)
+        {
+           AddQuote viewAddQuoteForm = new  AddQuote();
+           viewAddQuoteForm.Tag = this;
+           viewAddQuoteForm.Show(this);
+           this.Hide();
+        }
     }
 }
