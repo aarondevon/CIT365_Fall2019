@@ -298,9 +298,9 @@
             this.currentDate.AutoSize = true;
             this.currentDate.Location = new System.Drawing.Point(13, 332);
             this.currentDate.Name = "currentDate";
-            this.currentDate.Size = new System.Drawing.Size(35, 13);
+            this.currentDate.Size = new System.Drawing.Size(67, 13);
             this.currentDate.TabIndex = 21;
-            this.currentDate.Text = "label5";
+            this.currentDate.Text = "Current Date";
             // 
             // Form1
             // 

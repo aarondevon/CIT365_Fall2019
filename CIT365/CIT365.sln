@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication", "Conso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathQuiz", "MathQuiz\MathQuiz.csproj", "{7E508023-B8E4-4F02-9A82-879B66BD9EAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaDesk-Sawyer", "MegaDesk-Sawyer\MegaDesk-Sawyer.csproj", "{DCF82404-578F-4506-8E52-82197ABBED02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7E508023-B8E4-4F02-9A82-879B66BD9EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E508023-B8E4-4F02-9A82-879B66BD9EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E508023-B8E4-4F02-9A82-879B66BD9EAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCF82404-578F-4506-8E52-82197ABBED02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF82404-578F-4506-8E52-82197ABBED02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF82404-578F-4506-8E52-82197ABBED02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF82404-578F-4506-8E52-82197ABBED02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
