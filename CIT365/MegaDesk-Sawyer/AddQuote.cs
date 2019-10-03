@@ -16,5 +16,12 @@ namespace MegaDesk_Sawyer
         {
             InitializeComponent();
         }
+
+        private void MainMenu_Click(object sender, EventArgs e)
+        {
+            MainMenu mainMenu = (MainMenu)Tag;
+            mainMenu.Show();
+            this.Close();
+        }
     }
 }
