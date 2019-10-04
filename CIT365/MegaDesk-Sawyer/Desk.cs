@@ -15,5 +15,12 @@ namespace MegaDesk_Sawyer
         public const int MAXDEPTH = 48;
         public const int MINDRAWERS = 0;
         public const int MAXFRAWERS = 7;
+
+        public int Width { get; set; }
+        public int Depth { get; set; }
+
+        public int Drawers { get; set; }
+        
+
     }
 }
