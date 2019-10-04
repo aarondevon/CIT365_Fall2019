@@ -23,5 +23,45 @@ namespace MegaDesk_Sawyer
             mainMenu.Show();
             this.Close();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public static void LoadDeskMaterialCombo(ComboBox cbo)
+        {
+            cbo.DataSource = Enum.GetValues(typeof(DeskMaterial))
+                .Cast<Enum>()
+                .Select(value => new
+                {
+                    (Attribute.GetCustomAttribute(value.GetType().GetField(value.ToString()), typeof(DescriptionAttribute)) as DescriptionAttribute).Description,
+                    value
+                })
+                .OrderBy(item => item.value)
+                .ToList();
+            cbo.DisplayMember = "Description";
+            cbo.ValueMember = "value";
+        }
+
+        private void AddQuote_Load(object sender, EventArgs e)
+        {
+            LoadDeskMaterialCombo(DeskMaterial);
+        }
+    }
+    public enum DeskMaterial
+    {
+        [Description("Declined")]
+        Declined = -1,
+        [Description("Oak")]
+        Oak = 0,
+        [Description("Laminate")]
+        Laminate = 1,
+        [Description("Pine")]
+        Pine = 2,
+        [Description("Rosewood")]
+        Rosewood = 3,
+        [Description("Veneer")]
+        Veneer = 4
     }
 }
