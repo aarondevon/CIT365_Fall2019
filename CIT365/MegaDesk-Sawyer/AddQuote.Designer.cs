@@ -49,7 +49,7 @@
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.Size = new System.Drawing.Size(165, 60);
             this.MainMenu.TabIndex = 0;
-            this.MainMenu.Text = "Main Men&u";
+            this.MainMenu.Text = "&Main Menu";
             this.MainMenu.UseVisualStyleBackColor = true;
             this.MainMenu.Click += new System.EventHandler(this.MainMenu_Click);
             // 
