@@ -6,20 +6,15 @@ using System.Threading.Tasks;
 
 namespace MegaDesk_Sawyer
 {
-    class DeskQuote
-    { 
-        private string firstName = "";
+    public class DeskQuote
+    {
         private string lastName = "";
 
         Desk desk = new Desk();
 
-        public string FirstName
-        {
-            get { return firstName; }
-            set { firstName = value; }
-        }
+        public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int BaseDeskPrice { get; set; }
+        public int BaseDeskPrice { get; set; } = 200;
 
         public int DeskSurfaceArea()
         {

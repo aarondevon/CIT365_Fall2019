@@ -12,6 +12,7 @@ namespace MegaDesk_Sawyer
 {
     public partial class AddQuote : Form
     {
+        DeskQuote deskQuote = new DeskQuote();
         public AddQuote()
         {
             InitializeComponent();
@@ -42,6 +43,14 @@ namespace MegaDesk_Sawyer
         private void AddQuote_Load(object sender, EventArgs e)
         {
             LoadDeskMaterialCombo(DeskMaterial);
+        }
+
+        private void CreateQuote_Click(object sender, EventArgs e)
+        { 
+            DisplayQuote displayQuote = new DisplayQuote();
+            textBoxFirstName.Text = deskQuote.BaseDeskPrice.ToString();
+            
+            displayQuote.Show();
         }
     }
     public enum DeskMaterial

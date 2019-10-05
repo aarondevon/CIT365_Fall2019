@@ -66,6 +66,7 @@
             this.CreateQuote.TabIndex = 1;
             this.CreateQuote.Text = "Create &Quote";
             this.CreateQuote.UseVisualStyleBackColor = true;
+            this.CreateQuote.Click += new System.EventHandler(this.CreateQuote_Click);
             // 
             // labelWidth
             // 
@@ -161,7 +162,7 @@
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(64, 31);
+            this.textBoxLastName.Location = new System.Drawing.Point(66, 34);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(100, 20);
             this.textBoxLastName.TabIndex = 14;
