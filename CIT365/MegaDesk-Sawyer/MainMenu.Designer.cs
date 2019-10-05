@@ -95,6 +95,7 @@
             this.Exit.TabIndex = 3;
             this.Exit.Text = "E&xit";
             this.Exit.UseVisualStyleBackColor = false;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // pictureBox1
             // 

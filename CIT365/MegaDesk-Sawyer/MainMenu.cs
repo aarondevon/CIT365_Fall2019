@@ -40,5 +40,10 @@ namespace MegaDesk_Sawyer
             SearchQuotesForm.Show(this);
             this.Hide();
         }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
