@@ -24,11 +24,6 @@ namespace MegaDesk_Sawyer
             this.Close();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         public static void LoadDeskMaterialCombo(ComboBox cbo)
         {
             cbo.DataSource = Enum.GetValues(typeof(DeskMaterial))
