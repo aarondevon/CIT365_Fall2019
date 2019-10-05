@@ -38,6 +38,10 @@
             this.DeskMaterial = new System.Windows.Forms.ComboBox();
             this.labelRushDays = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.labelFirstName = new System.Windows.Forms.Label();
+            this.labelLastName = new System.Windows.Forms.Label();
+            this.textBoxFirstName = new System.Windows.Forms.TextBox();
+            this.textBoxLastName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +70,7 @@
             // labelWidth
             // 
             this.labelWidth.AutoSize = true;
-            this.labelWidth.Location = new System.Drawing.Point(9, 9);
+            this.labelWidth.Location = new System.Drawing.Point(9, 132);
             this.labelWidth.Name = "labelWidth";
             this.labelWidth.Size = new System.Drawing.Size(38, 13);
             this.labelWidth.TabIndex = 2;
@@ -75,7 +79,7 @@
             // labelDepth
             // 
             this.labelDepth.AutoSize = true;
-            this.labelDepth.Location = new System.Drawing.Point(9, 48);
+            this.labelDepth.Location = new System.Drawing.Point(9, 171);
             this.labelDepth.Name = "labelDepth";
             this.labelDepth.Size = new System.Drawing.Size(39, 13);
             this.labelDepth.TabIndex = 3;
@@ -83,14 +87,14 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(75, 7);
+            this.numericUpDown1.Location = new System.Drawing.Point(75, 130);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 4;
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(75, 41);
+            this.numericUpDown2.Location = new System.Drawing.Point(75, 164);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown2.TabIndex = 5;
@@ -98,7 +102,7 @@
             // labelMaterial
             // 
             this.labelMaterial.AutoSize = true;
-            this.labelMaterial.Location = new System.Drawing.Point(12, 78);
+            this.labelMaterial.Location = new System.Drawing.Point(12, 201);
             this.labelMaterial.Name = "labelMaterial";
             this.labelMaterial.Size = new System.Drawing.Size(47, 13);
             this.labelMaterial.TabIndex = 7;
@@ -108,7 +112,7 @@
             // 
             this.DeskMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DeskMaterial.FormattingEnabled = true;
-            this.DeskMaterial.Location = new System.Drawing.Point(75, 78);
+            this.DeskMaterial.Location = new System.Drawing.Point(75, 201);
             this.DeskMaterial.Name = "DeskMaterial";
             this.DeskMaterial.Size = new System.Drawing.Size(121, 21);
             this.DeskMaterial.TabIndex = 8;
@@ -116,7 +120,7 @@
             // labelRushDays
             // 
             this.labelRushDays.AutoSize = true;
-            this.labelRushDays.Location = new System.Drawing.Point(9, 119);
+            this.labelRushDays.Location = new System.Drawing.Point(9, 242);
             this.labelRushDays.Name = "labelRushDays";
             this.labelRushDays.Size = new System.Drawing.Size(35, 13);
             this.labelRushDays.TabIndex = 9;
@@ -125,16 +129,52 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(75, 119);
+            this.comboBox1.Location = new System.Drawing.Point(75, 242);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 10;
+            // 
+            // labelFirstName
+            // 
+            this.labelFirstName.AutoSize = true;
+            this.labelFirstName.Location = new System.Drawing.Point(0, 9);
+            this.labelFirstName.Name = "labelFirstName";
+            this.labelFirstName.Size = new System.Drawing.Size(60, 13);
+            this.labelFirstName.TabIndex = 11;
+            this.labelFirstName.Text = "First Name:";
+            // 
+            // labelLastName
+            // 
+            this.labelLastName.AutoSize = true;
+            this.labelLastName.Location = new System.Drawing.Point(0, 34);
+            this.labelLastName.Name = "labelLastName";
+            this.labelLastName.Size = new System.Drawing.Size(58, 13);
+            this.labelLastName.TabIndex = 12;
+            this.labelLastName.Text = "Last Name";
+            // 
+            // textBoxFirstName
+            // 
+            this.textBoxFirstName.Location = new System.Drawing.Point(66, 5);
+            this.textBoxFirstName.Name = "textBoxFirstName";
+            this.textBoxFirstName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFirstName.TabIndex = 13;
+            // 
+            // textBoxLastName
+            // 
+            this.textBoxLastName.Location = new System.Drawing.Point(64, 31);
+            this.textBoxLastName.Name = "textBoxLastName";
+            this.textBoxLastName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLastName.TabIndex = 14;
             // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 361);
+            this.Controls.Add(this.textBoxLastName);
+            this.Controls.Add(this.textBoxFirstName);
+            this.Controls.Add(this.labelLastName);
+            this.Controls.Add(this.labelFirstName);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.labelRushDays);
             this.Controls.Add(this.DeskMaterial);
@@ -167,5 +207,9 @@
         private System.Windows.Forms.ComboBox DeskMaterial;
         private System.Windows.Forms.Label labelRushDays;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label labelFirstName;
+        private System.Windows.Forms.Label labelLastName;
+        private System.Windows.Forms.TextBox textBoxFirstName;
+        private System.Windows.Forms.TextBox textBoxLastName;
     }
 }
