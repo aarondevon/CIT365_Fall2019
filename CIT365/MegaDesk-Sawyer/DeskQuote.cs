@@ -19,6 +19,18 @@ namespace MegaDesk_Sawyer
             return desk.Width * desk.Depth;
         }
 
+        public int PriceDeskSurfaceArea()
+        {
+            int deskSurfaceArea = DeskSurfaceArea();
+
+            if (deskSurfaceArea > 1000)
+            {
+                return deskSurfaceArea * 1;
+            }
+            
+            return 0;
+        }
+
         public Desk getDesk()
         {
             return desk;
