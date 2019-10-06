@@ -63,42 +63,51 @@ namespace MegaDesk_Sawyer
         }
         private void CreateQuote_Click(object sender, EventArgs e)
         {
-            int width = Convert.ToInt32(textBoxWidth.Text);
-            int depth = Convert.ToInt32(textBoxDepth.Text);
-            int drawers = Convert.ToInt32((textBoxDrawers.Text));
-            if (validWidth(width) && validDepth(depth) && validDrawers(drawers))
+            try
             {
-                DisplayQuote displayQuote = new DisplayQuote(deskQuote, (MainMenu)Tag);
+                int width = Convert.ToInt32(textBoxWidth.Text);
+                int depth = Convert.ToInt32(textBoxDepth.Text);
+                int drawers = Convert.ToInt32((textBoxDrawers.Text));
+                if (validWidth(width) && validDepth(depth) && validDrawers(drawers))
+                {
+                    DisplayQuote displayQuote = new DisplayQuote(deskQuote, (MainMenu)Tag);
 
-                deskQuote.FirstName = textBoxFirstName.Text;
-                deskQuote.LastName = textBoxLastName.Text;
-                deskQuote.getDesk().Width = width;
-                deskQuote.getDesk().Depth = depth;
-                deskQuote.getDesk().Drawers = drawers;
-                deskQuote.getDesk().Material = DeskMaterial.Text;
-                deskQuote.RushDays = Rush.Text;
-                    
-                displayQuote.Show();
-                this.Close();
+                    deskQuote.FirstName = textBoxFirstName.Text;
+                    deskQuote.LastName = textBoxLastName.Text;
+                    deskQuote.getDesk().Width = width;
+                    deskQuote.getDesk().Depth = depth;
+                    deskQuote.getDesk().Drawers = drawers;
+                    deskQuote.getDesk().Material = DeskMaterial.Text;
+                    deskQuote.RushDays = Rush.Text;
+
+                    displayQuote.Show();
+                    this.Close();
+                }
+                else
+                {
+                    if (!validWidth(width))
+                    {
+                        labelWidth.Text = "Range 24-96:";
+                        labelWidth.ForeColor = Color.DarkRed;
+                    }
+                    if (!validWidth(depth))
+                    {
+                        labelDepth.Text = "Range 12-48:";
+                        labelDepth.ForeColor = Color.DarkRed;
+                    }
+                    if (!validWidth(drawers))
+                    {
+                        labelDrawers.Text = "Range 0-7:";
+                        labelDrawers.ForeColor = Color.DarkRed;
+                    }
+                }
+
             }
-            else
+            catch (Exception exception)
             {
-                if (!validWidth(width))
-                {
-                    labelWidth.Text = "Range 24-96:";
-                    labelWidth.ForeColor = Color.DarkRed;
-                }
-                if (!validWidth(depth))
-                {
-                    labelDepth.Text = "Range 12-48:";
-                    labelDepth.ForeColor = Color.DarkRed;
-                }
-                if (!validWidth(drawers))
-                {
-                    labelDrawers.Text = "Range 0-7:";
-                    labelDrawers.ForeColor = Color.DarkRed;
-                }
+                Console.WriteLine(exception);
             }
+            
 
 
 
