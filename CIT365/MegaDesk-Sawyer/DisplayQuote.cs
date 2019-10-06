@@ -24,14 +24,15 @@ namespace MegaDesk_Sawyer
             this.deskQuote = deskQuote;
         }
 
-        
+
 
         private void DisplayQuote_Load(object sender, EventArgs e)
         {
             //textBoxFirstName.Text = this.deskQuote.FirstName;
-            labelWidth.Text = this.deskQuote.getDesk().Width.ToString();
-            labelDepth.Text = this.deskQuote.getDesk().Depth.ToString();
-            labelDeskTopArea.Text = this.deskQuote.DeskSurfaceArea().ToString();
+            labelBasePriceValue.Text = $"${this.deskQuote.BaseDeskPrice}";
+            labelAreaPriceValue.Text = $"${this.deskQuote.PriceDeskSurfaceArea()}";
+            labelDrawersValue.Text = $"${this.deskQuote.getDesk().Drawers * 50}";
+            labelTotalValue.Text = $"${this.deskQuote.GetTotal()}";
         }
     }
 }

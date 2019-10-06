@@ -31,6 +31,16 @@ namespace MegaDesk_Sawyer
             return 0;
         }
 
+        public int PriceDrawers()
+        {
+            return desk.Drawers * 50;
+        }
+
+        public int GetTotal()
+        {
+            return BaseDeskPrice + PriceDeskSurfaceArea() + PriceDrawers();
+        }
+
         public Desk getDesk()
         {
             return desk;

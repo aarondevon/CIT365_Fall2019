@@ -53,6 +53,7 @@ namespace MegaDesk_Sawyer
             deskQuote.FirstName = textBoxFirstName.Text;
             deskQuote.getDesk().Depth = (int)numericWidth.Value;
             deskQuote.getDesk().Width = (int)numericDepth.Value;
+            deskQuote.getDesk().Drawers = (int) numericDrawers.Value;
 
             displayQuote.Show();
         }

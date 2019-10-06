@@ -35,7 +35,7 @@
             this.labelBasePriceValue = new System.Windows.Forms.Label();
             this.labelAreaPriceValue = new System.Windows.Forms.Label();
             this.labelAreaPrice = new System.Windows.Forms.Label();
-            this.labelTotalValuePrice = new System.Windows.Forms.Label();
+            this.labelTotalValue = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
             this.labelDrawersValue = new System.Windows.Forms.Label();
             this.labelDrawers = new System.Windows.Forms.Label();
@@ -111,15 +111,15 @@
             this.labelAreaPrice.TabIndex = 11;
             this.labelAreaPrice.Text = "Surface Area:";
             // 
-            // labelTotalValuePrice
+            // labelTotalValue
             // 
-            this.labelTotalValuePrice.AutoSize = true;
-            this.labelTotalValuePrice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalValuePrice.Location = new System.Drawing.Point(345, 211);
-            this.labelTotalValuePrice.Name = "labelTotalValuePrice";
-            this.labelTotalValuePrice.Size = new System.Drawing.Size(49, 21);
-            this.labelTotalValuePrice.TabIndex = 14;
-            this.labelTotalValuePrice.Text = "Total";
+            this.labelTotalValue.AutoSize = true;
+            this.labelTotalValue.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalValue.Location = new System.Drawing.Point(345, 211);
+            this.labelTotalValue.Name = "labelTotalValue";
+            this.labelTotalValue.Size = new System.Drawing.Size(49, 21);
+            this.labelTotalValue.TabIndex = 14;
+            this.labelTotalValue.Text = "Total";
             // 
             // labelTotal
             // 
@@ -203,7 +203,7 @@
             this.Controls.Add(this.labelMaterial);
             this.Controls.Add(this.labelDrawersValue);
             this.Controls.Add(this.labelDrawers);
-            this.Controls.Add(this.labelTotalValuePrice);
+            this.Controls.Add(this.labelTotalValue);
             this.Controls.Add(this.labelTotal);
             this.Controls.Add(this.labelAreaPriceValue);
             this.Controls.Add(this.labelAreaPrice);
@@ -227,7 +227,7 @@
         private System.Windows.Forms.Label labelBasePriceValue;
         private System.Windows.Forms.Label labelAreaPriceValue;
         private System.Windows.Forms.Label labelAreaPrice;
-        private System.Windows.Forms.Label labelTotalValuePrice;
+        private System.Windows.Forms.Label labelTotalValue;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label labelDrawersValue;
         private System.Windows.Forms.Label labelDrawers;
