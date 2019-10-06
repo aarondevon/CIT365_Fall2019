@@ -18,7 +18,7 @@ namespace MegaDesk_Sawyer
         {
             InitializeComponent();
         }
-
+        // Find the reference to this code.
         public static void LoadDeskMaterialCombo(ComboBox cbo)
         {
             cbo.DataSource = Enum.GetValues(typeof(DeskMaterial))
@@ -48,6 +48,8 @@ namespace MegaDesk_Sawyer
             cbo.DisplayMember = "Description";
             cbo.ValueMember = "value";
         }
+
+
 
         private void AddQuote_Load(object sender, EventArgs e)
         {
