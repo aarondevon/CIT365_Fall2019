@@ -35,8 +35,10 @@ namespace MegaDesk_Sawyer
             labelAreaPriceValue.Text = $"${this.deskQuote.PriceDeskSurfaceArea()}";
             labelDrawersValue.Text = $"${this.deskQuote.PriceDrawers()}";
             labelMaterialValue.Text = $"${deskQuote.PriceMaterial()}";
+            labelRushValue.Text = $"${deskQuote.PriceRush()}";
             labelTotalValue.Text = $"${this.deskQuote.GetTotal()}";
             
+
         }
     }
 }

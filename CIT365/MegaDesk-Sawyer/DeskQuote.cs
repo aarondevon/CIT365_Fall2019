@@ -116,7 +116,7 @@ namespace MegaDesk_Sawyer
 
         public int GetTotal()
         {
-            return BaseDeskPrice + PriceDeskSurfaceArea() + PriceDrawers() + PriceMaterial();
+            return BaseDeskPrice + PriceDeskSurfaceArea() + PriceDrawers() + PriceMaterial() + PriceRush();
         }
 
         public Desk getDesk()

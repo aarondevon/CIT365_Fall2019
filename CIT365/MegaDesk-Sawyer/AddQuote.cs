@@ -40,9 +40,25 @@ namespace MegaDesk_Sawyer
             cbo.ValueMember = "value";
         }
 
+        public static void LoadRushCombo(ComboBox cbo)
+        {
+            cbo.DataSource = Enum.GetValues(typeof(RushDays))
+                .Cast<Enum>()
+                .Select(value => new
+                {
+                    (Attribute.GetCustomAttribute(value.GetType().GetField(value.ToString()), typeof(DescriptionAttribute)) as DescriptionAttribute).Description,
+                    value
+                })
+                .OrderBy(item => item.value)
+                .ToList();
+            cbo.DisplayMember = "Description";
+            cbo.ValueMember = "value";
+        }
+
         private void AddQuote_Load(object sender, EventArgs e)
         {
             LoadDeskMaterialCombo(DeskMaterial);
+            LoadRushCombo(Rush);
         }
 
         private void CreateQuote_Click(object sender, EventArgs e)
@@ -56,6 +72,7 @@ namespace MegaDesk_Sawyer
             deskQuote.getDesk().Width = (int)numericDepth.Value;
             deskQuote.getDesk().Drawers = (int) numericDrawers.Value;
             deskQuote.getDesk().Material = DeskMaterial.Text;
+            deskQuote.RushDays = Rush.Text;
 
             displayQuote.Show();
         }
@@ -74,5 +91,17 @@ namespace MegaDesk_Sawyer
         Rosewood = 3,
         [Description("Veneer")]
         Veneer = 4
+    }
+
+    public enum RushDays
+    {
+        [Description("No Rush")]
+        Declined = -1,
+        [Description("3")]
+        Three = 0,
+        [Description("5")]
+        Five = 1,
+        [Description("7")]
+        Seven = 2,
     }
 }
