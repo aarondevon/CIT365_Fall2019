@@ -42,9 +42,27 @@ namespace MegaDesk_Sawyer
             return desk.Drawers * 50;
         }
 
+        public int PriceMaterial()
+        {
+            switch (desk.Material)
+            {
+                case "Oak":
+                    return 200;
+                case "Laminate":
+                    return 100;
+                case "Pine":
+                    return 50;
+                case "Rosewood":
+                    return 300;
+                default :
+                    return 125;
+
+            }
+        }
+
         public int GetTotal()
         {
-            return BaseDeskPrice + PriceDeskSurfaceArea() + PriceDrawers();
+            return BaseDeskPrice + PriceDeskSurfaceArea() + PriceDrawers() + PriceMaterial();
         }
 
         public Desk getDesk()

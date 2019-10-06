@@ -33,8 +33,10 @@ namespace MegaDesk_Sawyer
             labelDateValue.Text = $"{deskQuote.getDate()}";
             labelBasePriceValue.Text = $"${this.deskQuote.BaseDeskPrice}";
             labelAreaPriceValue.Text = $"${this.deskQuote.PriceDeskSurfaceArea()}";
-            labelDrawersValue.Text = $"${this.deskQuote.getDesk().Drawers * 50}";
+            labelDrawersValue.Text = $"${this.deskQuote.PriceDrawers()}";
+            labelMaterialValue.Text = $"${deskQuote.PriceMaterial()}";
             labelTotalValue.Text = $"${this.deskQuote.GetTotal()}";
+            
         }
     }
 }

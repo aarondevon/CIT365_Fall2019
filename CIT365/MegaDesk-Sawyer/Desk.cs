@@ -16,11 +16,11 @@ namespace MegaDesk_Sawyer
         public const int MINDRAWERS = 0;
         public const int MAXDRAWERS = 7;
 
+        public string Material;
+
         public int Width { get; set; }
         public int Depth { get; set; }
 
         public int Drawers { get; set; }
-        
-
     }
 }
