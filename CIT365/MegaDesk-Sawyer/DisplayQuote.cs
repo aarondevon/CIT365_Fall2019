@@ -29,6 +29,8 @@ namespace MegaDesk_Sawyer
         private void DisplayQuote_Load(object sender, EventArgs e)
         {
             //textBoxFirstName.Text = this.deskQuote.FirstName;
+            labelCustomerValue.Text = $"{deskQuote.FirstName} {deskQuote.LastName}";
+            labelDateValue.Text = $"{deskQuote.getDate()}";
             labelBasePriceValue.Text = $"${this.deskQuote.BaseDeskPrice}";
             labelAreaPriceValue.Text = $"${this.deskQuote.PriceDeskSurfaceArea()}";
             labelDrawersValue.Text = $"${this.deskQuote.getDesk().Drawers * 50}";

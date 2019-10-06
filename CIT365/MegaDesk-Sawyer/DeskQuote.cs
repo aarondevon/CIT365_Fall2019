@@ -14,6 +14,12 @@ namespace MegaDesk_Sawyer
         public string LastName { get; set; }
         public int BaseDeskPrice { get; set; } = 200;
 
+        public string getDate()
+
+        {
+            return DateTime.Now.ToString("MM.dd.yyy");
+        }
+
         public int DeskSurfaceArea()
         { 
             return desk.Width * desk.Depth;
