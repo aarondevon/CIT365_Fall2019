@@ -18,7 +18,7 @@ namespace MegaDesk_Sawyer
         {
             InitializeComponent();
         }
-        // Find the reference to this code.
+        // https://stackoverflow.com/questions/35935961/bind-combobox-with-enum-description
         public static void LoadDeskMaterialCombo(ComboBox cbo)
         {
             cbo.DataSource = Enum.GetValues(typeof(DeskMaterial))
