@@ -33,8 +33,6 @@
             this.CreateQuote = new System.Windows.Forms.Button();
             this.labelWidth = new System.Windows.Forms.Label();
             this.labelDepth = new System.Windows.Forms.Label();
-            this.numericWidth = new System.Windows.Forms.NumericUpDown();
-            this.numericDepth = new System.Windows.Forms.NumericUpDown();
             this.labelMaterial = new System.Windows.Forms.Label();
             this.DeskMaterial = new System.Windows.Forms.ComboBox();
             this.labelRushDays = new System.Windows.Forms.Label();
@@ -43,11 +41,10 @@
             this.labelLastName = new System.Windows.Forms.Label();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
-            this.numericDrawers = new System.Windows.Forms.NumericUpDown();
             this.labelDrawers = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericWidth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericDepth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericDrawers)).BeginInit();
+            this.textBoxWidth = new System.Windows.Forms.TextBox();
+            this.textBoxDepth = new System.Windows.Forms.TextBox();
+            this.textBoxDrawers = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // MainMenu
@@ -97,22 +94,6 @@
             this.labelDepth.Size = new System.Drawing.Size(64, 21);
             this.labelDepth.TabIndex = 3;
             this.labelDepth.Text = "Depth:";
-            // 
-            // numericWidth
-            // 
-            this.numericWidth.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericWidth.Location = new System.Drawing.Point(354, 86);
-            this.numericWidth.Name = "numericWidth";
-            this.numericWidth.Size = new System.Drawing.Size(204, 27);
-            this.numericWidth.TabIndex = 4;
-            // 
-            // numericDepth
-            // 
-            this.numericDepth.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericDepth.Location = new System.Drawing.Point(354, 119);
-            this.numericDepth.Name = "numericDepth";
-            this.numericDepth.Size = new System.Drawing.Size(204, 27);
-            this.numericDepth.TabIndex = 5;
             // 
             // labelMaterial
             // 
@@ -191,14 +172,6 @@
             this.textBoxLastName.Size = new System.Drawing.Size(204, 27);
             this.textBoxLastName.TabIndex = 14;
             // 
-            // numericDrawers
-            // 
-            this.numericDrawers.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericDrawers.Location = new System.Drawing.Point(354, 152);
-            this.numericDrawers.Name = "numericDrawers";
-            this.numericDrawers.Size = new System.Drawing.Size(204, 27);
-            this.numericDrawers.TabIndex = 16;
-            // 
             // labelDrawers
             // 
             this.labelDrawers.AutoSize = true;
@@ -209,13 +182,39 @@
             this.labelDrawers.TabIndex = 15;
             this.labelDrawers.Text = "Drawers:";
             // 
+            // textBoxWidth
+            // 
+            this.textBoxWidth.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxWidth.Location = new System.Drawing.Point(354, 86);
+            this.textBoxWidth.Name = "textBoxWidth";
+            this.textBoxWidth.Size = new System.Drawing.Size(204, 27);
+            this.textBoxWidth.TabIndex = 17;
+            // 
+            // textBoxDepth
+            // 
+            this.textBoxDepth.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDepth.Location = new System.Drawing.Point(354, 119);
+            this.textBoxDepth.Name = "textBoxDepth";
+            this.textBoxDepth.Size = new System.Drawing.Size(204, 27);
+            this.textBoxDepth.TabIndex = 18;
+            // 
+            // textBoxDrawers
+            // 
+            this.textBoxDrawers.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDrawers.Location = new System.Drawing.Point(354, 152);
+            this.textBoxDrawers.Name = "textBoxDrawers";
+            this.textBoxDrawers.Size = new System.Drawing.Size(204, 27);
+            this.textBoxDrawers.TabIndex = 19;
+            // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(584, 361);
-            this.Controls.Add(this.numericDrawers);
+            this.Controls.Add(this.textBoxDrawers);
+            this.Controls.Add(this.textBoxDepth);
+            this.Controls.Add(this.textBoxWidth);
             this.Controls.Add(this.labelDrawers);
             this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.textBoxFirstName);
@@ -225,8 +224,6 @@
             this.Controls.Add(this.labelRushDays);
             this.Controls.Add(this.DeskMaterial);
             this.Controls.Add(this.labelMaterial);
-            this.Controls.Add(this.numericDepth);
-            this.Controls.Add(this.numericWidth);
             this.Controls.Add(this.labelDepth);
             this.Controls.Add(this.labelWidth);
             this.Controls.Add(this.CreateQuote);
@@ -237,9 +234,6 @@
             this.Name = "AddQuote";
             this.Text = "AddQuote";
             this.Load += new System.EventHandler(this.AddQuote_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericWidth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericDepth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericDrawers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,8 +245,6 @@
         private System.Windows.Forms.Button CreateQuote;
         private System.Windows.Forms.Label labelWidth;
         private System.Windows.Forms.Label labelDepth;
-        private System.Windows.Forms.NumericUpDown numericWidth;
-        private System.Windows.Forms.NumericUpDown numericDepth;
         private System.Windows.Forms.Label labelMaterial;
         private System.Windows.Forms.ComboBox DeskMaterial;
         private System.Windows.Forms.Label labelRushDays;
@@ -261,7 +253,9 @@
         private System.Windows.Forms.Label labelLastName;
         private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.TextBox textBoxLastName;
-        private System.Windows.Forms.NumericUpDown numericDrawers;
         private System.Windows.Forms.Label labelDrawers;
+        private System.Windows.Forms.TextBox textBoxWidth;
+        private System.Windows.Forms.TextBox textBoxDepth;
+        private System.Windows.Forms.TextBox textBoxDrawers;
     }
 }

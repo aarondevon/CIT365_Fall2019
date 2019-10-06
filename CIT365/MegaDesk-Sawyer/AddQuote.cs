@@ -69,9 +69,9 @@ namespace MegaDesk_Sawyer
 
             deskQuote.FirstName = textBoxFirstName.Text;
             deskQuote.LastName = textBoxLastName.Text;
-            deskQuote.getDesk().Depth = (int)numericWidth.Value;
-            deskQuote.getDesk().Width = (int)numericDepth.Value;
-            deskQuote.getDesk().Drawers = (int)numericDrawers.Value;
+            deskQuote.getDesk().Depth = Convert.ToInt32(textBoxWidth.Text);
+            deskQuote.getDesk().Width = Convert.ToInt32(textBoxDepth.Text);
+            deskQuote.getDesk().Drawers = Convert.ToInt32(textBoxDrawers.Text);
             deskQuote.getDesk().Material = DeskMaterial.Text;
             deskQuote.RushDays = Rush.Text;
                 
