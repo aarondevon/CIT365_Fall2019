@@ -18,6 +18,11 @@ namespace MegaDesk_Sawyer
 
         public string Material;
 
+        public int GetMinWidth()
+        {
+            return MINWIDTH;
+        }
+
         public int Width { get; set; }
         public int Depth { get; set; }
 

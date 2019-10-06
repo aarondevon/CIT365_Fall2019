@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace MegaDesk_Sawyer
 {
@@ -20,8 +21,8 @@ namespace MegaDesk_Sawyer
 
         private void MainMenu_Click(object sender, EventArgs e)
         {
-            MainMenu mainMenu = (MainMenu)Tag;
-            mainMenu.Show();
+            MainMenu mainMenu = (MainMenu)Tag; 
+            mainMenu.Show(); 
             this.Close();
         }
 
@@ -63,19 +64,34 @@ namespace MegaDesk_Sawyer
 
         private void CreateQuote_Click(object sender, EventArgs e)
         {
-            deskQuote.getDesk();
-            DisplayQuote displayQuote = new DisplayQuote(deskQuote);
-            
-            deskQuote.FirstName = textBoxFirstName.Text;
-            deskQuote.LastName = textBoxLastName.Text;
-            deskQuote.getDesk().Depth = (int)numericWidth.Value;
-            deskQuote.getDesk().Width = (int)numericDepth.Value;
-            deskQuote.getDesk().Drawers = (int) numericDrawers.Value;
-            deskQuote.getDesk().Material = DeskMaterial.Text;
-            deskQuote.RushDays = Rush.Text;
+            //if (numericWidth.Value >= deskQuote.getDesk().GetMinWidth() && numericWidth.Value <= 96)
+            //{
+                deskQuote.getDesk();
+                DisplayQuote displayQuote = new DisplayQuote(deskQuote);
+                this.Close();
+                deskQuote.FirstName = textBoxFirstName.Text;
+                deskQuote.LastName = textBoxLastName.Text;
+                deskQuote.getDesk().Depth = (int)numericWidth.Value;
+                deskQuote.getDesk().Width = (int)numericDepth.Value;
+                deskQuote.getDesk().Drawers = (int)numericDrawers.Value;
+                deskQuote.getDesk().Material = DeskMaterial.Text;
+                deskQuote.RushDays = Rush.Text;
 
-            displayQuote.Show();
+                displayQuote.Show();
+            //}
+            
+            
+            
         }
+
+        //private void numericWidth_KeyUp(object sender, KeyEventArgs e)
+        //{
+        //    if ((int)numericWidth.Value >= 24 && (int)numericWidth.Value <= 96)
+        //    {
+        //        labelWidthValidation.Text = "";
+        //    }
+        //    labelWidthValidation.Text = "Min width 24\" Max Width 96\"";
+        //}
     }
     public enum DeskMaterial
     {
