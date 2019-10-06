@@ -66,9 +66,8 @@ namespace MegaDesk_Sawyer
         {
             //if (numericWidth.Value >= deskQuote.getDesk().GetMinWidth() && numericWidth.Value <= 96)
             //{
-                deskQuote.getDesk();
-                DisplayQuote displayQuote = new DisplayQuote(deskQuote);
-                this.Close();
+            DisplayQuote displayQuote = new DisplayQuote(deskQuote);
+                
                 deskQuote.FirstName = textBoxFirstName.Text;
                 deskQuote.LastName = textBoxLastName.Text;
                 deskQuote.getDesk().Depth = (int)numericWidth.Value;
@@ -76,12 +75,13 @@ namespace MegaDesk_Sawyer
                 deskQuote.getDesk().Drawers = (int)numericDrawers.Value;
                 deskQuote.getDesk().Material = DeskMaterial.Text;
                 deskQuote.RushDays = Rush.Text;
-
+                
                 displayQuote.Show();
+                this.Close();
             //}
-            
-            
-            
+
+
+
         }
 
         //private void numericWidth_KeyUp(object sender, KeyEventArgs e)
