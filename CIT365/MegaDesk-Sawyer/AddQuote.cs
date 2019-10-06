@@ -63,41 +63,72 @@ namespace MegaDesk_Sawyer
         }
         private void CreateQuote_Click(object sender, EventArgs e)
         {
-            //if (numericWidth.Value >= deskQuote.getDesk().GetMinWidth() && numericWidth.Value <= 96)
-            //{
-            DisplayQuote displayQuote = new DisplayQuote(deskQuote, (MainMenu)Tag);
+            int width = Convert.ToInt32(textBoxWidth.Text);
+            int depth = Convert.ToInt32(textBoxDepth.Text);
+            int drawers = Convert.ToInt32((textBoxDrawers.Text));
+            if (validWidth(width))
+            {
+                DisplayQuote displayQuote = new DisplayQuote(deskQuote, (MainMenu)Tag);
 
-            deskQuote.FirstName = textBoxFirstName.Text;
-            deskQuote.LastName = textBoxLastName.Text;
-            deskQuote.getDesk().Depth = Convert.ToInt32(textBoxWidth.Text);
-            deskQuote.getDesk().Width = Convert.ToInt32(textBoxDepth.Text);
-            deskQuote.getDesk().Drawers = Convert.ToInt32(textBoxDrawers.Text);
-            deskQuote.getDesk().Material = DeskMaterial.Text;
-            deskQuote.RushDays = Rush.Text;
-                
-            displayQuote.Show();
-            this.Close();
-            //}
+                deskQuote.FirstName = textBoxFirstName.Text;
+                deskQuote.LastName = textBoxLastName.Text;
+                deskQuote.getDesk().Width = width;
+                deskQuote.getDesk().Depth = depth;
+                deskQuote.getDesk().Drawers = drawers;
+                deskQuote.getDesk().Material = DeskMaterial.Text;
+                deskQuote.RushDays = Rush.Text;
+                    
+                displayQuote.Show();
+                this.Close();
+            }
+            else
+            {
+                if (!validWidth(width))
+                {
+                    labelWidth.Text = "Invalid Width:";
+                    labelWidth.ForeColor = Color.DarkRed;
+                }
+            }
 
 
 
         }
 
+        private bool validWidth(int width)
+        {
+            if (width >= deskQuote.getDesk().GetMinWidth() && width <= deskQuote.getDesk().GetMaxWidth())
+            {
+                return true;
+            }
+
+            return false;
+        }
+        // Store keypresses
+        private string strNum = "";
         private void textBoxWidth_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
             char ch = Convert.ToChar(e.KeyChar);
             if (!char.IsControl(ch) && char.IsDigit(ch))
             {
-                int width = Convert.ToInt32(textBoxDepth.Text);
-                if (width >= deskQuote.getDesk().GetMinWidth() && width <= deskQuote.getDesk())
-                {
+                strNum += Convert.ToString(ch);
 
+                int width = Convert.ToInt32(strNum);
+                if (width >= deskQuote.getDesk().GetMinWidth() && width <= deskQuote.getDesk().GetMaxWidth())
+                {
+                    labelWidth.Text = "Width:";
+                    labelWidth.ForeColor = Color.Black;
+                }
+                else
+                {
+                    //labelWidth.Text = "Invalid Width:";
+                    //labelWidth.ForeColor = Color.DarkRed;
                 }
             }
 
             int num;
         }
-        }
+        
 
         //private void numericWidth_KeyUp(object sender, KeyEventArgs e)
         //{
