@@ -191,7 +191,6 @@
             this.textBoxWidth.Size = new System.Drawing.Size(204, 27);
             this.textBoxWidth.TabIndex = 17;
             this.textBoxWidth.Text = "0";
-            this.textBoxWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxWidth_KeyPress);
             this.textBoxWidth.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxWidth_KeyUp);
             // 
             // textBoxDepth

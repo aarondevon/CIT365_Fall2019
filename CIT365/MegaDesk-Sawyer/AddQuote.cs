@@ -90,12 +90,12 @@ namespace MegaDesk_Sawyer
                         labelWidth.Text = "Range 24-96:";
                         labelWidth.ForeColor = Color.DarkRed;
                     }
-                    if (!validWidth(depth))
+                    if (!validDepth(depth))
                     {
                         labelDepth.Text = "Range 12-48:";
                         labelDepth.ForeColor = Color.DarkRed;
                     }
-                    if (!validWidth(drawers))
+                    if (!validDrawers(drawers))
                     {
                         labelDrawers.Text = "Range 0-7:";
                         labelDrawers.ForeColor = Color.DarkRed;
@@ -119,9 +119,9 @@ namespace MegaDesk_Sawyer
             return false;
         }
 
-        private bool validDepth(int width)
+        private bool validDepth(int depth)
         {
-            if (width >= deskQuote.getDesk().GetMinDepth() && width <= deskQuote.getDesk().GetMaxDepth())
+            if (depth >= deskQuote.getDesk().GetMinDepth() && depth <= deskQuote.getDesk().GetMaxDepth())
             {
                 return true;
             }
@@ -129,9 +129,9 @@ namespace MegaDesk_Sawyer
             return false;
         }
 
-        private bool validDrawers(int width)
+        private bool validDrawers(int drawers)
         {
-            if (width >= deskQuote.getDesk().GetMinDrawers() && width <= deskQuote.getDesk().GetMaxDrawers())
+            if (drawers >= deskQuote.getDesk().GetMinDrawers() && drawers <= deskQuote.getDesk().GetMaxDrawers())
             {
                 return true;
             }
@@ -139,17 +139,14 @@ namespace MegaDesk_Sawyer
             return false;
         }
 
-        //private string strNum = "";
-        private void textBoxWidth_KeyPress(object sender, KeyPressEventArgs e)
-        {
 
-            char ch = Convert.ToChar(e.KeyChar);
-            string strNum = $"{textBoxWidth.Text}{ch}";
-            if (char.IsControl(ch) || char.IsDigit(ch))
+        private void textBoxWidth_KeyUp(object sender, KeyEventArgs e)
+        {
+            int width; 
+            
+            if (Int32.TryParse(textBoxWidth.Text, out width))
             {
-                
-                int width = Convert.ToInt32(strNum);
-                if (width >= deskQuote.getDesk().GetMinWidth() && width <= deskQuote.getDesk().GetMaxWidth())
+                if (validWidth(width))
                 {
                     labelWidth.Text = "Width:";
                     labelWidth.ForeColor = Color.Black;
@@ -160,45 +157,11 @@ namespace MegaDesk_Sawyer
                     labelWidth.ForeColor = Color.DarkRed;
                 }
             }
-
-            int num;
         }
-
-        private void textBoxWidth_KeyUp(object sender, KeyEventArgs e)
-        {
-            char ch = Convert.ToChar(e.KeyValue);
-            if (!char.IsControl(ch) && char.IsDigit(ch))
-            {
-                //strNum += Convert.ToString(ch);
-
-                //int width = Convert.ToInt32(strNum);
-                //if (width >= deskQuote.getDesk().GetMinWidth() && width <= deskQuote.getDesk().GetMaxWidth())
-                //{
-                //    labelWidth.Text = "Width:";
-                //    labelWidth.ForeColor = Color.Black;
-                //}
-                //else
-                //{
-                    //labelWidth.Text = "Invalid Width:";
-                    //labelWidth.ForeColor = Color.DarkRed;
-                //}
-            }
-        }
-
-
-        //private void numericWidth_KeyUp(object sender, KeyEventArgs e)
-        //{
-        //    if ((int)numericWidth.Value >= 24 && (int)numericWidth.Value <= 96)
-        //    {
-        //        labelWidthValidation.Text = "";
-        //    }
-        //    labelWidthValidation.Text = "Min width 24\" Max Width 96\"";
-        //}
     }
+
     public enum DeskMaterial
     {
-        [Description("Declined")]
-        Declined = -1,
         [Description("Oak")]
         Oak = 0,
         [Description("Laminate")]
