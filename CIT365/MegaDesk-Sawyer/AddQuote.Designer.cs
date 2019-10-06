@@ -231,7 +231,9 @@
             this.Controls.Add(this.labelWidth);
             this.Controls.Add(this.CreateQuote);
             this.Controls.Add(this.MainMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "AddQuote";
             this.Text = "AddQuote";
             this.Load += new System.EventHandler(this.AddQuote_Load);

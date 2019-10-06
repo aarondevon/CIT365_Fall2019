@@ -261,7 +261,9 @@
             this.Controls.Add(this.labelBasePrice);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.MainMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "DisplayQuote";
             this.Text = "DisplayQuote";
             this.Load += new System.EventHandler(this.DisplayQuote_Load);
