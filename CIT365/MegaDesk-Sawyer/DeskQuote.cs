@@ -119,7 +119,7 @@ namespace MegaDesk_Sawyer
             return BaseDeskPrice + PriceDeskSurfaceArea() + PriceDrawers() + PriceMaterial() + PriceRush();
         }
 
-        public Desk getDesk()
+        public Desk GetDesk()
         {
             return desk;
         }

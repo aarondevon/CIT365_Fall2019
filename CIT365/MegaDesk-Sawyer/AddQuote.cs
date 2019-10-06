@@ -74,10 +74,10 @@ namespace MegaDesk_Sawyer
 
                     deskQuote.FirstName = textBoxFirstName.Text;
                     deskQuote.LastName = textBoxLastName.Text;
-                    deskQuote.getDesk().Width = width;
-                    deskQuote.getDesk().Depth = depth;
-                    deskQuote.getDesk().Drawers = drawers;
-                    deskQuote.getDesk().Material = DeskMaterial.Text;
+                    deskQuote.GetDesk().Width = width;
+                    deskQuote.GetDesk().Depth = depth;
+                    deskQuote.GetDesk().Drawers = drawers;
+                    deskQuote.GetDesk().Material = DeskMaterial.Text;
                     deskQuote.RushDays = Rush.Text;
 
                     displayQuote.Show();
@@ -111,7 +111,7 @@ namespace MegaDesk_Sawyer
 
         private bool validWidth(int width)
         {
-            if (width >= deskQuote.getDesk().GetMinWidth() && width <= deskQuote.getDesk().GetMaxWidth())
+            if (width >= deskQuote.GetDesk().GetMinWidth() && width <= deskQuote.GetDesk().GetMaxWidth())
             {
                 return true;
             }
@@ -121,7 +121,7 @@ namespace MegaDesk_Sawyer
 
         private bool validDepth(int depth)
         {
-            if (depth >= deskQuote.getDesk().GetMinDepth() && depth <= deskQuote.getDesk().GetMaxDepth())
+            if (depth >= deskQuote.GetDesk().GetMinDepth() && depth <= deskQuote.GetDesk().GetMaxDepth())
             {
                 return true;
             }
@@ -131,7 +131,7 @@ namespace MegaDesk_Sawyer
 
         private bool validDrawers(int drawers)
         {
-            if (drawers >= deskQuote.getDesk().GetMinDrawers() && drawers <= deskQuote.getDesk().GetMaxDrawers())
+            if (drawers >= deskQuote.GetDesk().GetMinDrawers() && drawers <= deskQuote.GetDesk().GetMaxDrawers())
             {
                 return true;
             }
