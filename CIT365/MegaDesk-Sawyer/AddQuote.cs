@@ -19,13 +19,6 @@ namespace MegaDesk_Sawyer
             InitializeComponent();
         }
 
-        private void MainMenu_Click(object sender, EventArgs e)
-        {
-            MainMenu mainMenu = (MainMenu)Tag; 
-            mainMenu.Show(); 
-            this.Close();
-        }
-
         public static void LoadDeskMaterialCombo(ComboBox cbo)
         {
             cbo.DataSource = Enum.GetValues(typeof(DeskMaterial))
@@ -62,22 +55,28 @@ namespace MegaDesk_Sawyer
             LoadRushCombo(Rush);
         }
 
+        private void MainMenu_Click(object sender, EventArgs e)
+        {
+            MainMenu mainMenu = (MainMenu)Tag;
+            mainMenu.Show();
+            this.Close();
+        }
         private void CreateQuote_Click(object sender, EventArgs e)
         {
             //if (numericWidth.Value >= deskQuote.getDesk().GetMinWidth() && numericWidth.Value <= 96)
             //{
-            DisplayQuote displayQuote = new DisplayQuote(deskQuote);
+            DisplayQuote displayQuote = new DisplayQuote(deskQuote, (MainMenu)Tag);
+
+            deskQuote.FirstName = textBoxFirstName.Text;
+            deskQuote.LastName = textBoxLastName.Text;
+            deskQuote.getDesk().Depth = (int)numericWidth.Value;
+            deskQuote.getDesk().Width = (int)numericDepth.Value;
+            deskQuote.getDesk().Drawers = (int)numericDrawers.Value;
+            deskQuote.getDesk().Material = DeskMaterial.Text;
+            deskQuote.RushDays = Rush.Text;
                 
-                deskQuote.FirstName = textBoxFirstName.Text;
-                deskQuote.LastName = textBoxLastName.Text;
-                deskQuote.getDesk().Depth = (int)numericWidth.Value;
-                deskQuote.getDesk().Width = (int)numericDepth.Value;
-                deskQuote.getDesk().Drawers = (int)numericDrawers.Value;
-                deskQuote.getDesk().Material = DeskMaterial.Text;
-                deskQuote.RushDays = Rush.Text;
-                
-                displayQuote.Show();
-                this.Close();
+            displayQuote.Show();
+            this.Close();
             //}
 
 

@@ -61,6 +61,7 @@
             this.Exit.TabIndex = 5;
             this.Exit.Text = "E&xit";
             this.Exit.UseVisualStyleBackColor = false;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // MainMenu
             // 
@@ -74,6 +75,7 @@
             this.MainMenu.TabIndex = 4;
             this.MainMenu.Text = "&Main Menu";
             this.MainMenu.UseVisualStyleBackColor = false;
+            this.MainMenu.Click += new System.EventHandler(this.MainMenu_Click);
             // 
             // labelBasePrice
             // 

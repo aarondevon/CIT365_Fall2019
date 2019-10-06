@@ -13,15 +13,17 @@ namespace MegaDesk_Sawyer
     public partial class DisplayQuote : Form
     {
         private DeskQuote deskQuote;
+        private MainMenu mainMenu;
         public DisplayQuote()
         {
             InitializeComponent();
         }
 
-        public DisplayQuote(DeskQuote deskQuote)
+        public DisplayQuote(DeskQuote deskQuote, MainMenu mainMenu)
         {
             InitializeComponent();
             this.deskQuote = deskQuote;
+            this.mainMenu = mainMenu;
         }
 
 
@@ -39,6 +41,18 @@ namespace MegaDesk_Sawyer
             labelTotalValue.Text = $"${this.deskQuote.GetTotal()}";
             
 
+        }
+
+        private void MainMenu_Click(object sender, EventArgs e)
+        {
+            
+            mainMenu.Show();
+            this.Close();
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
