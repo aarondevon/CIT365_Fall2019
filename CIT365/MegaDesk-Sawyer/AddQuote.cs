@@ -153,10 +153,50 @@ namespace MegaDesk_Sawyer
                 }
                 else
                 {
-                    labelWidth.Text = "Invalid Width:";
+                    labelWidth.Text = "Range 24-96:";
                     labelWidth.ForeColor = Color.DarkRed;
                 }
             }
+        }
+
+        private void textBoxDepth_KeyUp(object sender, KeyEventArgs e)
+        {
+            int depth;
+
+            if (Int32.TryParse(textBoxDepth.Text, out depth))
+            {
+                if (validDepth(depth))
+                {
+                    labelDepth.Text = "Depth:";
+                    labelDepth.ForeColor = Color.Black;
+                }
+                else
+                {
+                    labelDepth.Text = "Range 12-48:";
+                    labelDepth.ForeColor = Color.DarkRed;
+                }
+            }
+
+        }
+
+        private void textBoxDrawers_KeyUp(object sender, KeyEventArgs e)
+        {
+            int drawers;
+
+            if (Int32.TryParse(textBoxDrawers.Text, out drawers))
+            {
+                if (validDrawers(drawers))
+                {
+                    labelDrawers.Text = "Drawers:";
+                    labelDrawers.ForeColor = Color.Black;
+                }
+                else
+                {
+                    labelDrawers.Text = "Range 0-7:";
+                    labelDrawers.ForeColor = Color.DarkRed;
+                }
+            }
+
         }
     }
 

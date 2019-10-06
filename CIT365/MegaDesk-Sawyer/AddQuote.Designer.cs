@@ -201,6 +201,7 @@
             this.textBoxDepth.Size = new System.Drawing.Size(204, 27);
             this.textBoxDepth.TabIndex = 18;
             this.textBoxDepth.Text = "0";
+            this.textBoxDepth.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxDepth_KeyUp);
             // 
             // textBoxDrawers
             // 
@@ -210,6 +211,7 @@
             this.textBoxDrawers.Size = new System.Drawing.Size(204, 27);
             this.textBoxDrawers.TabIndex = 19;
             this.textBoxDrawers.Text = "0";
+            this.textBoxDrawers.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxDrawers_KeyUp);
             // 
             // AddQuote
             // 
