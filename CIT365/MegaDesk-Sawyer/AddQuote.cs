@@ -49,8 +49,6 @@ namespace MegaDesk_Sawyer
             cbo.ValueMember = "value";
         }
 
-
-
         private void AddQuote_Load(object sender, EventArgs e)
         {
             LoadDeskMaterialCombo(DeskMaterial);
@@ -83,6 +81,22 @@ namespace MegaDesk_Sawyer
 
 
 
+        }
+
+        private void textBoxWidth_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = Convert.ToChar(e.KeyChar);
+            if (!char.IsControl(ch) && char.IsDigit(ch))
+            {
+                int width = Convert.ToInt32(textBoxDepth.Text);
+                if (width >= deskQuote.getDesk().GetMinWidth() && width <= deskQuote.getDesk())
+                {
+
+                }
+            }
+
+            int num;
+        }
         }
 
         //private void numericWidth_KeyUp(object sender, KeyEventArgs e)
