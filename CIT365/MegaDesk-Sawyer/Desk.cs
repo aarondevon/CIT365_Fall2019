@@ -23,6 +23,31 @@ namespace MegaDesk_Sawyer
             return MINWIDTH;
         }
 
+        public int GetMaxWidth()
+        {
+            return MAXWIDTH;
+        }
+
+        public int GetMinDepth()
+        {
+            return MINDEPTH;
+        }
+
+        public int GetMaxDepth()
+        {
+            return MAXDEPTH;
+        }
+
+        public int GetMinDrawers()
+        {
+            return MINDRAWERS;
+        }
+
+        public int GetMaxDrawers()
+        {
+            return MAXDRAWERS;
+        }
+
         public int Width { get; set; }
         public int Depth { get; set; }
 
