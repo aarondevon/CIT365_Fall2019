@@ -67,6 +67,7 @@
             // CreateQuote
             // 
             this.CreateQuote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(156)))), ((int)(((byte)(238)))));
+            this.CreateQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateQuote.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateQuote.ForeColor = System.Drawing.Color.White;
             this.CreateQuote.Location = new System.Drawing.Point(12, 105);
