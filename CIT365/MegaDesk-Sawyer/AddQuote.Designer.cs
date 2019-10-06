@@ -38,7 +38,7 @@
             this.labelMaterial = new System.Windows.Forms.Label();
             this.DeskMaterial = new System.Windows.Forms.ComboBox();
             this.labelRushDays = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Rush = new System.Windows.Forms.ComboBox();
             this.labelFirstName = new System.Windows.Forms.Label();
             this.labelLastName = new System.Windows.Forms.Label();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
@@ -143,14 +143,15 @@
             this.labelRushDays.TabIndex = 9;
             this.labelRushDays.Text = "Rush:";
             // 
-            // comboBox1
+            // Rush
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(354, 220);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(204, 29);
-            this.comboBox1.TabIndex = 10;
+            this.Rush.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Rush.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rush.FormattingEnabled = true;
+            this.Rush.Location = new System.Drawing.Point(354, 220);
+            this.Rush.Name = "Rush";
+            this.Rush.Size = new System.Drawing.Size(204, 29);
+            this.Rush.TabIndex = 10;
             // 
             // labelFirstName
             // 
@@ -218,7 +219,7 @@
             this.Controls.Add(this.textBoxFirstName);
             this.Controls.Add(this.labelLastName);
             this.Controls.Add(this.labelFirstName);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Rush);
             this.Controls.Add(this.labelRushDays);
             this.Controls.Add(this.DeskMaterial);
             this.Controls.Add(this.labelMaterial);
@@ -251,7 +252,7 @@
         private System.Windows.Forms.Label labelMaterial;
         private System.Windows.Forms.ComboBox DeskMaterial;
         private System.Windows.Forms.Label labelRushDays;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox Rush;
         private System.Windows.Forms.Label labelFirstName;
         private System.Windows.Forms.Label labelLastName;
         private System.Windows.Forms.TextBox textBoxFirstName;
