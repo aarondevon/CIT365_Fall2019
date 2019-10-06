@@ -12,7 +12,7 @@ namespace MegaDesk_Sawyer
 {
     public partial class AddQuote : Form
     {
-        DeskQuote deskQuote = new DeskQuote();
+        public DeskQuote deskQuote = new DeskQuote();
         public AddQuote()
         {
             InitializeComponent();
@@ -46,10 +46,14 @@ namespace MegaDesk_Sawyer
         }
 
         private void CreateQuote_Click(object sender, EventArgs e)
-        { 
-            DisplayQuote displayQuote = new DisplayQuote();
-            textBoxFirstName.Text = deskQuote.BaseDeskPrice.ToString();
+        {
+            deskQuote.getDesk();
+            DisplayQuote displayQuote = new DisplayQuote(deskQuote);
             
+            deskQuote.FirstName = textBoxFirstName.Text;
+            deskQuote.getDesk().Depth = (int)numericWidth.Value;
+            deskQuote.getDesk().Width = (int)numericDepth.Value;
+
             displayQuote.Show();
         }
     }

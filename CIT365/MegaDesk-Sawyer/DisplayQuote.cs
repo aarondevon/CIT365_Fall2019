@@ -12,9 +12,26 @@ namespace MegaDesk_Sawyer
 {
     public partial class DisplayQuote : Form
     {
+        private DeskQuote deskQuote;
         public DisplayQuote()
         {
             InitializeComponent();
+        }
+
+        public DisplayQuote(DeskQuote deskQuote)
+        {
+            InitializeComponent();
+            this.deskQuote = deskQuote;
+        }
+
+        
+
+        private void DisplayQuote_Load(object sender, EventArgs e)
+        {
+            //textBoxFirstName.Text = this.deskQuote.FirstName;
+            labelWidth.Text = this.deskQuote.getDesk().Width.ToString();
+            labelDepth.Text = this.deskQuote.getDesk().Depth.ToString();
+            labelDeskTopArea.Text = this.deskQuote.DeskSurfaceArea().ToString();
         }
     }
 }
