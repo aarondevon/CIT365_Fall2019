@@ -107,10 +107,6 @@ namespace MegaDesk_Sawyer
             {
                 Console.WriteLine(exception);
             }
-            
-
-
-
         }
 
         private bool validWidth(int width)

@@ -184,11 +184,13 @@
             // 
             // textBoxWidth
             // 
+            this.textBoxWidth.BackColor = System.Drawing.SystemColors.Window;
             this.textBoxWidth.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxWidth.Location = new System.Drawing.Point(354, 86);
             this.textBoxWidth.Name = "textBoxWidth";
             this.textBoxWidth.Size = new System.Drawing.Size(204, 27);
             this.textBoxWidth.TabIndex = 17;
+            this.textBoxWidth.Text = "0";
             this.textBoxWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxWidth_KeyPress);
             this.textBoxWidth.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxWidth_KeyUp);
             // 
@@ -199,6 +201,7 @@
             this.textBoxDepth.Name = "textBoxDepth";
             this.textBoxDepth.Size = new System.Drawing.Size(204, 27);
             this.textBoxDepth.TabIndex = 18;
+            this.textBoxDepth.Text = "0";
             // 
             // textBoxDrawers
             // 
@@ -207,6 +210,7 @@
             this.textBoxDrawers.Name = "textBoxDrawers";
             this.textBoxDrawers.Size = new System.Drawing.Size(204, 27);
             this.textBoxDrawers.TabIndex = 19;
+            this.textBoxDrawers.Text = "0";
             // 
             // AddQuote
             // 
