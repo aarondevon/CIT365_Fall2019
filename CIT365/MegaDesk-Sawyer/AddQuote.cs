@@ -66,7 +66,7 @@ namespace MegaDesk_Sawyer
             int width = Convert.ToInt32(textBoxWidth.Text);
             int depth = Convert.ToInt32(textBoxDepth.Text);
             int drawers = Convert.ToInt32((textBoxDrawers.Text));
-            if (validWidth(width))
+            if (validWidth(width) && validDepth(depth) && validDrawers(drawers))
             {
                 DisplayQuote displayQuote = new DisplayQuote(deskQuote, (MainMenu)Tag);
 
@@ -85,8 +85,18 @@ namespace MegaDesk_Sawyer
             {
                 if (!validWidth(width))
                 {
-                    labelWidth.Text = "Invalid Width:";
+                    labelWidth.Text = "Range 24-96:";
                     labelWidth.ForeColor = Color.DarkRed;
+                }
+                if (!validWidth(depth))
+                {
+                    labelDepth.Text = "Range 12-48:";
+                    labelDepth.ForeColor = Color.DarkRed;
+                }
+                if (!validWidth(drawers))
+                {
+                    labelDrawers.Text = "Range 0-7:";
+                    labelDrawers.ForeColor = Color.DarkRed;
                 }
             }
 
@@ -103,16 +113,36 @@ namespace MegaDesk_Sawyer
 
             return false;
         }
-        // Store keypresses
-        private string strNum = "";
+
+        private bool validDepth(int width)
+        {
+            if (width >= deskQuote.getDesk().GetMinDepth() && width <= deskQuote.getDesk().GetMaxDepth())
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool validDrawers(int width)
+        {
+            if (width >= deskQuote.getDesk().GetMinDrawers() && width <= deskQuote.getDesk().GetMaxDrawers())
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        //private string strNum = "";
         private void textBoxWidth_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
-            char ch = Convert.ToChar(e.KeyChar);
-            if (!char.IsControl(ch) && char.IsDigit(ch))
-            {
-                strNum += Convert.ToString(ch);
 
+            char ch = Convert.ToChar(e.KeyChar);
+            string strNum = $"{textBoxWidth.Text}{ch}";
+            if (char.IsControl(ch) || char.IsDigit(ch))
+            {
+                
                 int width = Convert.ToInt32(strNum);
                 if (width >= deskQuote.getDesk().GetMinWidth() && width <= deskQuote.getDesk().GetMaxWidth())
                 {
@@ -121,14 +151,35 @@ namespace MegaDesk_Sawyer
                 }
                 else
                 {
-                    //labelWidth.Text = "Invalid Width:";
-                    //labelWidth.ForeColor = Color.DarkRed;
+                    labelWidth.Text = "Invalid Width:";
+                    labelWidth.ForeColor = Color.DarkRed;
                 }
             }
 
             int num;
         }
-        
+
+        private void textBoxWidth_KeyUp(object sender, KeyEventArgs e)
+        {
+            char ch = Convert.ToChar(e.KeyValue);
+            if (!char.IsControl(ch) && char.IsDigit(ch))
+            {
+                //strNum += Convert.ToString(ch);
+
+                //int width = Convert.ToInt32(strNum);
+                //if (width >= deskQuote.getDesk().GetMinWidth() && width <= deskQuote.getDesk().GetMaxWidth())
+                //{
+                //    labelWidth.Text = "Width:";
+                //    labelWidth.ForeColor = Color.Black;
+                //}
+                //else
+                //{
+                    //labelWidth.Text = "Invalid Width:";
+                    //labelWidth.ForeColor = Color.DarkRed;
+                //}
+            }
+        }
+
 
         //private void numericWidth_KeyUp(object sender, KeyEventArgs e)
         //{
